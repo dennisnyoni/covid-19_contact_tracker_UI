@@ -1,0 +1,77 @@
+<form class="formwidth" (ngSubmit)="onSubmit()" #createstatisticForm="ngForm">
+    <h3>Create Statistic Data</h3>
+    <br/>
+    <div [hidden]="submitted" style="width:400px; ">
+        <div>
+            <div>
+                <div>
+                    <mat-form-field>
+                        <input matInput [matDatepicker]="dpapplication" placeholder="Date of submission" id="dateOfCollection"
+                            [(ngModel)]="statistic.dateOfCollection" name="dateOfCollection" required>
+                        <mat-datepicker-toggle matSuffix [for]="dpapplication"></mat-datepicker-toggle>
+                        <mat-datepicker #dpapplication></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field>
+                        <mat-label>Province</mat-label>
+                        <select matNativeControl placeholder="Province" id="status"
+                            [(ngModel)]="statistic.province" name="province" required>
+                            <option value="Bulawayo">Bulawayo</option>
+                            <option value="Harare">Harare</option>
+                            <option value="Manicaland">Manicaland</option>
+                            <option value="Mash Central">Mash Central</option>
+                            <option value="Mash Central">Mash Central</option>
+                            <option value="Mash West">Mash West</option>
+                            <option value="Masvingo">Masvingo</option>
+                            <option value="Mat North">Mat North</option>
+                            <option value="Mat South">Mat South</option>
+                            <option value="Midlands">Midlands</option>
+                        </select>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field>
+                        <input type=number matInput id="positive" placeholder="Positive" [(ngModel)]="statistic.positive" name="positive"
+                            required>
+
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field>
+                        <input type=number matInput id="negative" placeholder="Negative" [(ngModel)]="statistic.negative"
+                            name="negative" required >
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field>
+                        <input type=number matInput id="recovered" placeholder="Recovered" [(ngModel)]="statistic.recovered" name="gender"
+                            required>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field>
+                        <input type=number matInput id="deaths" placeholder="Deaths" [(ngModel)]="statistic.deaths" name="deaths"
+                            required>
+                    </mat-form-field>
+                </div>
+                
+                <div>
+                    <button type="submit" class="btn btn-success" [disabled]="!createstatisticForm.valid">Submit</button>
+                    <div [hidden]="!submitted">
+                        <!--<h4>You submitted successfully!</h4>
+            <button class="btn btn-success" (click)="newstatistic()">Add</button> -->
+                    </div>
+                </div>
+                <div>
+                    <td>
+                        <!--<button mat-raised-button (click)="onClose()">Cancel</button>-->
+                    </td>
+                    Click the main form to exit
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+

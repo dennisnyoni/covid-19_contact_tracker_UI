@@ -1,0 +1,143 @@
+<form class="formwidth" (ngSubmit)="onSubmit()" #editPersonForm="ngForm">
+    <h3>Update Person's status</h3>
+    <br/>
+    <div [hidden]="submitted" style="width:400px; ">
+        <div>
+            <div>
+                <div>
+                    <mat-form-field>
+                        <mat-label>Status</mat-label>
+                        <select matNativeControl placeholder="Status" id="status"
+                            [(ngModel)]="person.status" name="status" required>
+                            <option value="negative">negative</option>
+                            <option value="positive">positive</option>
+                            
+                        </select>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field>
+                        <input matInput id="phone" placeholder="Phone" [(ngModel)]="person.phone" name="phone"
+                            required>
+
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field>
+                        <input matInput id="ageRange" placeholder="Age range" [(ngModel)]="person.age_range"
+                            name="age_range" required >
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field>
+                        <input matInput id="gender" placeholder="Gender" [(ngModel)]="person.gender" name="gender"
+                            required>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field>
+                        <input matInput id="phone" placeholder="Phone number" [(ngModel)]="person.phone" name="phone"
+                            required>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field>
+                        <input matInput id="province" placeholder="Province" [(ngModel)]="person.province" name="province"
+                            required>
+
+                    </mat-form-field>
+                </div>
+
+                <div>
+                    <mat-form-field>
+                        <input matInput id="chronicDisease" placeholder="Do you have any chronic disease" [(ngModel)]="person.chronic_disease"
+                            name="chronic_disease" required>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field>
+                        <input matInput id="smoking" placeholder="Do you smoke" [(ngModel)]="person.smoking"
+                            name="smoking" required>
+                    </mat-form-field>
+                </div>
+
+                <div>
+                    <mat-form-field>
+                        <input matInput id="positivePersonContact" placeholder="Have you ever been in contact with positive person"
+                            [(ngModel)]="person.positive_person_contact" name="positivePersonContact">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field>
+                        <input matInput id="fever" placeholder="Do you have fever"
+                            [(ngModel)]="person.fever" name="fever" required>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field>
+                        <input matInput id="cough" placeholder="Do you have a cough"
+                            [(ngModel)]="person.cough" name="cough" required>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field>
+                        <input matInput id="shortnessOfBreath" placeholder="Do you feel shortness of breath"
+                            [(ngModel)]="person.shortness_of_breath" name="shortness_of_breath" required>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field>
+                        <input matInput id="lossOfTaste" placeholder="Have you lost taste"
+                            [(ngModel)]="person.loss_of_taste" name="lossOfTaste" required>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field>
+                        <input matInput id="symptomDuration" placeholder="For how long have you had the symptoms"
+                            [(ngModel)]="person.symptom_duration" name="symptomDuration" required>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field>
+                        <input matInput id="processingStatus" placeholder="Processing status"
+                            [(ngModel)]="person.processing_status" name="processingStatus" required>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field>
+                        <input matInput id="travelledAbroad" placeholder="Have you travelled abroad recently"
+                            [(ngModel)]="person.travelledAbroad" name="travelledAbroad" required>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field>
+                        <input matInput id=" countryTravelled" placeholder="To which country did you travel"
+                            [(ngModel)]="person. countryTravelled" name=" countryTravelled" required>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field>
+                        <input matInput [matDatepicker]="dpapplication" placeholder="Date of submission" id="dateOfSubmission"
+                            [(ngModel)]="person.date_of_submission" name="dateOfSubmission" required>
+                        <mat-datepicker-toggle matSuffix [for]="dpapplication"></mat-datepicker-toggle>
+                        <mat-datepicker #dpapplication></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                
+                <div>
+                    <button type="submit" class="btn btn-success" [disabled]="!editPersonForm.valid">Submit</button>
+                    <div [hidden]="!submitted">
+                        <!--<h4>You submitted successfully!</h4>
+            <button class="btn btn-success" (click)="newperson()">Add</button> -->
+                    </div>
+                </div>
+                <div>
+                    <td>
+                        <!--<button mat-raised-button (click)="onClose()">Cancel</button>-->
+                    </td>
+                  Click the main form to exit
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
